@@ -64,7 +64,7 @@ export class AuthRegister extends OpenAPIRoute {
         const body = data.body
 
         // Get query builder for D1
-        const qb = new D1QB(c.env.DB)
+        const qb = new D1QB(c.env.AUTH_DB)
 
         try {
             // Try to insert a new user
@@ -240,7 +240,7 @@ export async function authenticateUser(c: AppContext, next: Next) {
     }
 
     // Get query builder for D1
-    const qb = new D1QB(c.env.DB)
+    const qb = new D1QB(c.env.AUTH_DB)
 
     const session = await qb.fetchOne<UserSession>({
         tableName: 'users_sessions',
