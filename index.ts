@@ -17,6 +17,7 @@ app.get("/api/health", (c) => {
   });
 });
 
+
 // Public authentication routes
 app.post("/api/auth/register", AuthRegister);
 app.post("/api/auth/login", AuthLogin);
